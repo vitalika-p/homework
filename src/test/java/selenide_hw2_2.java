@@ -18,17 +18,21 @@ public class selenide_hw2_2 {
     }
 
     @Test
-    void DragAndDrop () {
+    void dragAndDropTest () {
 
         open("/drag_and_drop");
+        $("#column-a").shouldHave(text("A"));
+        $("#column-b").shouldHave(text("B"));
         actions().moveToElement($("#column-a")).clickAndHold().moveToElement($("#column-b")).release().perform();
         $("#column-b").shouldHave(text("A"));
     }
 
     @Test
-    void DragAndDropOther () {
+    void dragAndDropOtherTest () {
 
         open("/drag_and_drop");
+        $("#column-a").shouldHave(text("A"));
+        $("#column-b").shouldHave(text("B"));
         $("#column-a").dragAndDrop(DragAndDropOptions.to($("#column-b")));
         $("#column-b header").shouldHave(text("A"));
     }

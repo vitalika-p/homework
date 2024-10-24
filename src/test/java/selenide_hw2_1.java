@@ -19,7 +19,7 @@ public class selenide_hw2_1 {
     }
 
     @Test
-    void findSolutions () {
+    void findSolutionsTest () {
 
         open("");
         $(".HeaderMenu-nav").$(byText("Solutions")).hover();
